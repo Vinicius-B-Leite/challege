@@ -1,0 +1,137 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+}
+
+.bg {
+	background-color: #fff;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+.sidebar {
+	height: 100vh;
+	background-color: #f2f2f2;
+	width: 20rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem 0;
+}
+
+.sidebar img {
+	width: 6rem;
+	height: 4rem;
+	margin-bottom: 4rem;
+}
+
+.sidebar h2 {
+	font-size: 1.3rem;
+	font-weight: 500;
+}
+
+.sidebar .active {
+	color: red;
+}
+
+.sidebar > div {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	align-items: center;
+}
+
+.last {
+	margin-top: auto;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+}
+
+.right {
+	display: flex;
+	flex-direction: column;
+	padding: 3rem;
+	color: red;
+	height: 100vh;
+}
+.right h1 {
+	margin-bottom: 1rem;
+}
+.message-bot {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1rem;
+	width: 90%;
+}
+
+.message-bot .logo-bg {
+	background-color: red;
+	border-radius: 100%;
+	padding: 0.3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.message-bot p {
+	color: #000;
+}
+
+.myself-message {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: flex-end;
+	margin-bottom: 1rem;
+}
+
+.myself-message div {
+	color: #000;
+	width: 60%;
+	background-color: rgb(255, 172, 172);
+	padding: 1rem 2rem;
+	border-radius: 1rem;
+}
+
+.input {
+	margin-top: auto;
+	display: flex;
+	gap: 1rem;
+}
+.input input {
+	background-color: #f2f2f2;
+	border: 0px;
+	padding: 1rem;
+	border-radius: 0.3rem;
+	flex: 1;
+}
+
+.send {
+	background-color: red;
+	border: 0px;
+	width: 3rem;
+	border-radius: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	outline: 0px;
+}
+
+@media (max-width: 768px) {
+	.sidebar {
+		display: none;
+	}
+	.right {
+		padding: 1rem;
+	}
+}

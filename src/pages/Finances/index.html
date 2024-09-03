@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Challenge</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet" />
+		<link rel="stylesheet" href="./styles.css" />
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	</head>
+	<body class="bg">
+		<div class="row">
+			<div class="sidebar">
+				<img src="../../assets//imgs//logo-vermelha.png" alt="" />
+				<div>
+					<h2 class="active">Finanças</h2>
+					<h2>Perfil</h2>
+					<h2>Chat Bot</h2>
+					<h2 class="last">Sair da conta</h2>
+				</div>
+			</div>
+
+			<div class="right">
+				<h1>Finanças</h1>
+
+				<div class="row" style="flex-wrap: wrap; gap: 1rem">
+					<div class="card">
+						<div>
+							<p>Saldo Atual</p>
+							<h3>R$ 3.000,00</h3>
+						</div>
+
+						<div class="icon">
+							<img src="../../assets/imgs/money.png" alt="" />
+						</div>
+					</div>
+
+					<div class="card" style="border-left-color: #00ff0a">
+						<div>
+							<p>Entrada</p>
+							<h3>R$ 3.000,00</h3>
+						</div>
+
+						<div class="icon" style="background-color: #00ff0a">
+							<img src="../../assets/imgs/money.png" alt="" />
+						</div>
+					</div>
+
+					<div class="card" style="border-left-color: #ff0000">
+						<div>
+							<p>Saída</p>
+							<h3>R$ 3.000,00</h3>
+						</div>
+
+						<div class="icon" style="background-color: #ff0000">
+							<img src="../../assets/imgs/money.png" alt="" />
+						</div>
+					</div>
+
+					<div class="card" style="border-left-color: #787878">
+						<div>
+							<p>A Cair</p>
+							<h3>R$ 3.000,00</h3>
+						</div>
+
+						<div class="icon" style="background-color: #787878">
+							<img src="../../assets/imgs/money.png" alt="" />
+						</div>
+					</div>
+				</div>
+
+				<div style="width: 90%; height: 30rem; margin-top: 4rem">
+					<canvas id="myChart"></canvas>
+				</div>
+
+				<div
+					class="row"
+					style="margin-top: 4rem; flex-wrap: wrap; row-gap: 1rem; gap: 1rem">
+					<div class="rank5">
+						<h3 style="text-align: center; margin-bottom: 0.3rem">
+							Top 5 mais vendidos
+						</h3>
+						<div
+							class="row"
+							style="justify-content: space-between; gap: 0.5rem">
+							<p>MilkShake Nutellicia</p>
+							<p>R$ 10000</p>
+						</div>
+						<div
+							class="row"
+							style="
+								justify-content: space-between;
+								gap: 0.5rem;
+								color: #000;
+							">
+							<p>Pizza MilkShake</p>
+							<p>R$ 5000</p>
+						</div>
+						<div
+							class="row"
+							style="
+								justify-content: space-between;
+								gap: 0.5rem;
+								color: #000;
+							">
+							<p>Pizza de brigadeira</p>
+							<p>R$ 3000</p>
+						</div>
+						<div
+							class="row"
+							style="
+								justify-content: space-between;
+								gap: 0.5rem;
+								color: #000;
+							">
+							<p>Lanche com blend especial</p>
+							<p>R$ 1000</p>
+						</div>
+					</div>
+
+					<div style="width: 30%; height: 15rem">
+						<canvas id="chart2"></canvas>
+					</div>
+
+					<div class="rank5">
+						<h3 style="text-align: center; margin-bottom: 0.3rem">
+							Top 5 menos vendidos
+						</h3>
+						<div
+							class="row"
+							style="justify-content: space-between; gap: 0.5rem">
+							<p>Pizza de peixa</p>
+							<p>R$ 45</p>
+						</div>
+						<div
+							class="row"
+							style="
+								justify-content: space-between;
+								gap: 0.5rem;
+								color: #000;
+							">
+							<p>Banana sem slipt</p>
+							<p>R$ 55</p>
+						</div>
+						<div
+							class="row"
+							style="
+								justify-content: space-between;
+								gap: 0.5rem;
+								color: #000;
+							">
+							<p>Pure de pure</p>
+							<p>R$ 65</p>
+						</div>
+						<div
+							class="row"
+							style="
+								justify-content: space-between;
+								gap: 0.5rem;
+								color: #000;
+							">
+							<p>Feijoada sem feijão</p>
+							<p>R$ 75</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			const data = {
+				labels: ["5 min", "35 min", "10 min"],
+				datasets: [
+					{
+						label: "Tempo de espera",
+						data: [5, 35, 10],
+						backgroundColor: ["#EA1D2C", "#9E000C", "#FF6C77"],
+						hoverOffset: 4,
+					},
+				],
+			}
+			const ctx2 = document.getElementById("chart2")
+
+			const ctx = document.getElementById("myChart")
+			Chart.defaults.backgroundColor = "#ff0000"
+			Chart.defaults.borderColor = "transparent"
+			Chart.defaults.color = "#000"
+
+			new Chart(ctx2, {
+				type: "doughnut",
+				data,
+			})
+
+			new Chart(ctx, {
+				type: "line",
+				data: {
+					labels: ["dom", "ter", "qui", "sab"],
+					datasets: [
+						{
+							label: "Receita",
+							data: [12, 19, 3, 5, 2, 3],
+							borderWidth: 1,
+							borderColor: "red",
+						},
+					],
+				},
+			})
+		</script>
+	</body>
+</html>

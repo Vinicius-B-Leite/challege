@@ -1,0 +1,45 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Roboto";
+}
+
+.bg {
+	background: linear-gradient(45deg, #841019, #ea1d2c);
+	width: 100vw;
+	height: 100vh;
+	padding: 2rem;
+}
+.logo {
+	width: 4rem;
+	height: 3rem;
+}
+.content {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-items: center;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 4rem;
+	align-items: center;
+	cursor: pointer;
+}
+
+.card img {
+	border: 1px #fff solid;
+	border-radius: 100%;
+	width: 5rem;
+	height: 5rem;
+	object-fit: contain;
+}
+
+.card p {
+	color: #fff;
+	font-size: 14px;
+}
